@@ -32,11 +32,19 @@ function quartersFunc(dollarAmount) {
 
 // WHY WONT THIS WORK???
 
-// function dimesFunc(dollarAmount) {
-//   dollarAmount = (dollarAmount % quarter).toFixed(2);
-//   let Ds = Math.floor(dollarAmount / dime);
-//   return Ds;
-// }
+function dimesFunc(dollarAmount) {
+  return Math.floor((dollarAmount % quarter).toFixed(2) / dime);
+}
+
+function nickelsFunc(dollarAmount) {
+  return Math.floor((dollarAmount % dime).toFixed(2) / nickle);
+}
+
+function penniesFunc(dollarAmount) {
+  return Math.floor((dollarAmount % nickle).toFixed(2) / penny);
+}
+
+
 
 
 function coinCounter (dollarAmount) {
@@ -45,13 +53,16 @@ function coinCounter (dollarAmount) {
     var coinPurse = {};
     
     coinPurse.quarters = quartersFunc(dollarAmount);
+    coinPurse.dimes = dimesFunc(dollarAmount);
+    coinPurse.nickles = nickelsFunc(dollarAmount);
+    coinPurse.pennies = penniesFunc(dollarAmount);
     // coinPurse.quarters = Math.floor(dollarAmount / quarter);
-    dollarAmount = (dollarAmount % quarter).toFixed(2);
-    coinPurse.dimes= Math.floor(dollarAmount / dime);
-    dollarAmount = (dollarAmount % dime).toFixed(2);
-    coinPurse.nickels = Math.floor(dollarAmount / nickle);
-    dollarAmount = (dollarAmount % nickle).toFixed(2);
-    coinPurse.pennies = Math.floor(dollarAmount / penny);
+    // dollarAmount = (dollarAmount % quarter).toFixed(2);
+    // coinPurse.dimes= Math.floor(dollarAmount / dime);
+    // dollarAmount = (dollarAmount % dime).toFixed(2);
+    // coinPurse.nickels = Math.floor(dollarAmount / nickle);
+    // dollarAmount = (dollarAmount % nickle).toFixed(2);
+    // coinPurse.pennies = Math.floor(dollarAmount / penny);
 
   
     return coinPurse;
