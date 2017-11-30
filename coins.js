@@ -32,11 +32,11 @@ function quartersFunc(dollarAmount) {
 
 // WHY WONT THIS WORK???
 
-function dimesFunc(dollarAmount) {
-  dollarAmount = (dollarAmount % quarter).toFixed(2);
-  let Ds = Math.floor(dollarAmount / dime);
-  return Ds;
-}
+// function dimesFunc(dollarAmount) {
+//   dollarAmount = (dollarAmount % quarter).toFixed(2);
+//   let Ds = Math.floor(dollarAmount / dime);
+//   return Ds;
+// }
 
 
 function coinCounter (dollarAmount) {
